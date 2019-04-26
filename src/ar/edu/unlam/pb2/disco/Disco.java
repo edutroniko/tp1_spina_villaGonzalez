@@ -29,12 +29,24 @@ public class Disco {
 		return sup;
 	}
 	
-	public void cambiarRadioInterior(Double radio) {
-		this.setRadioInterior(radio);
+	public Boolean cambiarRadioInterior(Double nuevoRadioInterior){
+		if(nuevoRadioInterior < this.radioExterior){
+			this.radioInterior  = nuevoRadioInterior;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
-	public void cambiarRadioExterior(Double radio) {
-		this.setRadioExterior(radio);
+	public Boolean cambiarRadioExterior(Double nuevoRadioExterior){
+		if(nuevoRadioExterior > this.radioInterior){
+			this.radioExterior = nuevoRadioExterior;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
 	public Double getRadioInterior() {
